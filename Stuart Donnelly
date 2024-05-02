@@ -1,0 +1,29 @@
+flag = True
+studentList = []
+while flag:
+  print("""
+  ***** Welcome to The student database *****
+  Add Student: press 1
+  Show Student: press 2  
+  remove Student: press 3
+  Exit: press 4
+  """)
+  option = int(input("Enter the menu number: "))
+  if option == 1:
+    studentName = input("Please Enter the Student Name: ")
+    studentList.append(studentName)
+  elif option == 2:
+    for student in studentList:
+      print(student)
+  elif option == 3:
+    count = 1
+    for student in studentList:
+      print(f"{count} => {student}")
+      count = count + 1
+    studentIndex = int(input("Please Enter the Student Index: "))
+    studentList.pop(studentIndex - 1)
+  elif option == 4:
+    print("You have chosen to exit")
+    flag = False
+  else:
+    print("Invalid Selection")
